@@ -141,6 +141,18 @@ is a finite message of 15 quotients, 58 bits. The reduced constant
 bits/quotient, indistinguishable from Gauss–Kuzmin noise. By decree h is
 a finite message; hbar talks forever and says nothing.
 
+`constants_demo.jl` adds three more constants, three more morals.
+Champernowne's `0.123456789101112...` is provably normal in base 10, yet
+its CF hides a 166-digit quotient that overflows the decoder's `Int64` —
+typical in one number system, pathological in another. Khinchin's theorem
+(the geometric mean of almost every real's quotients converges to
+K = 2.6854...) is checked live on π's quotients — while whether K obeys
+its own theorem remains open. And the fine-structure constant
+`1/alpha = 137.035999177(21)`: recomputing the CF at both ends of the
+error bar shows only 6 quotients survive the experimental uncertainty —
+h is exact by decree, π by mathematics, but α's continued fraction ends
+at the precision of experiment.
+
 A measured head-to-head against PadicCoding.jl — where each coder wins
 and why — is in [COMPARISON.md](COMPARISON.md) (`compare.jl` reproduces
 it).
@@ -154,6 +166,7 @@ julia --project pi_demo.jl
 julia --project e_demo.jl
 julia --project collatz_demo.jl
 julia --project planck_demo.jl
+julia --project constants_demo.jl
 ```
 
 ## Notes
