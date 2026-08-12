@@ -133,6 +133,14 @@ trajectory whose true entropy is just `log2(n)` — the start number
 determines everything. Collatz orbits are even worse for a CF coder than
 e: Kolmogorov complexity versus what any digit-based coder can see.
 
+`planck_demo.jl` closes the trilogy of number types. Since the 2019 SI
+redefinition, Planck's constant is *exact by decree* — `h = 6.62607015e-34`
+is rational, so its continued fraction terminates: the quantum of action
+is a finite message of 15 quotients, 58 bits. The reduced constant
+`hbar = h/2pi` inherits pi's irrationality and re-encodes at 3.43
+bits/quotient, indistinguishable from Gauss–Kuzmin noise. By decree h is
+a finite message; hbar talks forever and says nothing.
+
 A measured head-to-head against PadicCoding.jl — where each coder wins
 and why — is in [COMPARISON.md](COMPARISON.md) (`compare.jl` reproduces
 it).
@@ -145,6 +153,7 @@ julia --project demo.jl
 julia --project pi_demo.jl
 julia --project e_demo.jl
 julia --project collatz_demo.jl
+julia --project planck_demo.jl
 ```
 
 ## Notes
