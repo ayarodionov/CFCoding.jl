@@ -122,6 +122,17 @@ CF coder and infinitely compressible for anyone who knows the formula.
 (It also needs 50,000 binary digits for 5,000 quotients where π needs
 ~17,000: Lévy's constant only holds for typical reals.)
 
+`collatz_demo.jl` plays the same game with 3n+1 trajectories: the orbit
+of `n` becomes the continued fraction `[0; n, c1, c2, ..., 1]` — a real
+number that *is* the trajectory. Start 27 (112 steps, peak 9232) is a
+rational with a 278-digit denominator whose byte message surfaces
+fragments like `y<.[-.E"i4.O'`; start 75 ends in silence (`"J.p..T..?......"`)
+because the final crash through the powers of two is all unprintable
+bytes. The punchline: the CF code spends 8–17 bits per step on a
+trajectory whose true entropy is just `log2(n)` — the start number
+determines everything. Collatz orbits are even worse for a CF coder than
+e: Kolmogorov complexity versus what any digit-based coder can see.
+
 A measured head-to-head against PadicCoding.jl — where each coder wins
 and why — is in [COMPARISON.md](COMPARISON.md) (`compare.jl` reproduces
 it).
@@ -133,6 +144,7 @@ julia --project -e 'using Pkg; Pkg.test()'
 julia --project demo.jl
 julia --project pi_demo.jl
 julia --project e_demo.jl
+julia --project collatz_demo.jl
 ```
 
 ## Notes
