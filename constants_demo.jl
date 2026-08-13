@@ -26,6 +26,8 @@ end
 
 shorten(a) = ndigits(a) > 12 ? "<$(ndigits(a))-digit number>" : string(a)
 
+as_text(q) = join(map(a -> 32 <= a - 1 <= 126 ? Char(a - 1) : '.', q))
+
 # ---- 1. Champernowne: normal in base 10, monstrous in CF ----
 println("1. Champernowne's constant 0.12345678910111213...")
 function champernowne_digits(n)
@@ -50,6 +52,7 @@ catch e
     println(typeof(e), " -- the ", ndigits(maximum(q)),
             "-digit quotient overflows the decoder's Int64.")
 end
+println("   message : \"", as_text(q), "\"")
 println("   Base 10 sees perfectly uniform digits; CF sees structure so")
 println("   extreme it breaks the coder.\n")
 
@@ -64,9 +67,11 @@ for n in (10, 100, 1000, 5000)
     @printf("   geometric mean of pi's first %4d quotients: %.4f\n", n, gm)
 end
 println("   -> crawling toward K = 2.6854, as Khinchin's theorem demands.")
+println("   pi's quotients as text: \"", as_text(qpi[1:100]), "\"")
 qk = big_quotients(big(26854520010653064), big(10)^16, 12)
 println("   K's own CF starts [2; ", join(qk[2:end], ", "), ", ...] --")
-println("   whether K obeys its own theorem is an open problem.\n")
+println("   as text \"", as_text(qk), "\" -- whether K obeys its own")
+println("   theorem is an open problem.\n")
 
 # ---- 3. Fine-structure constant: a CF with an error bar ----
 println("3. Fine-structure constant, 1/alpha = 137.035999177(21)  (CODATA 2022)")
@@ -76,6 +81,7 @@ mid = big_quotients(big(10)^9, den0,      20)  #   of the measured
 hi  = big_quotients(big(10)^9, den0 - 21, 20)  #   uncertainty interval
 horizon = findfirst(i -> !(lo[i] == mid[i] == hi[i]), 1:20) - 1
 println("   central : [0; ", join(mid[1:horizon+2], ", "), ", ...]")
+println("   the trustworthy part as text: \"", as_text(mid[1:horizon]), "\"")
 println("   the three CFs (value, value+sigma, value-sigma) agree on ",
         horizon, " quotients,")
 println("   then dissolve into the error bar.  h is exact by decree, pi by")
