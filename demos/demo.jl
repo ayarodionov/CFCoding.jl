@@ -18,7 +18,7 @@ H = GK_ENTROPY
         length(bits) / n, 100 * (length(bits) / n - H) / H)
 
 # 2. Strings: code units become quotients b+1.  A quotient of size k costs
-#    about 2*log2(k) bits, so ASCII text (~bytes 32..122) is expensive —
+#    about 2*log2(k) bits, so ASCII text (~bytes 32..122) is expensive --
 #    CF coding is spectacularly mismatched to text, which is the point.
 s = "In the fields of Provence, a mathematician counts in trits."
 sb = cf_encode(s)

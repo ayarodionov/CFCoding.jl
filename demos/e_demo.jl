@@ -9,7 +9,7 @@ using Printf
 
 j = 50_000                                    # binary digits of e - 2 used
 setprecision(BigFloat, j + 128)
-m = BigInt(floor((BigFloat(ℯ) - 2) * (big(1) << j)))    # m/2^j ~ e - 2
+m = BigInt(floor((BigFloat(MathConstants.e) - 2) * (big(1) << j)))  # m/2^j ~ e - 2
 
 # ---- 1. decode e's bits as a CF code stream ----
 n = 30
@@ -23,7 +23,7 @@ println("e = [2; ", join(q, ", "), ", ...]")
 
 v = 2 + cf_value(q)
 @printf("value of that fraction: %.20f\n", Float64(v))
-@printf("e                     : %.20f\n\n", Float64(BigFloat(ℯ)))
+@printf("e                     : %.20f\n\n", Float64(BigFloat(MathConstants.e)))
 
 # the "message" e spells, one byte per quotient (a - 1), printables only
 nq = 5_000
