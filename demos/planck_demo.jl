@@ -9,7 +9,7 @@
 # We code the mantissa's fractional part (the number's scale is bookkeeping;
 # its digits are the physics).
 #
-# Run with:  julia --project planck_demo.jl
+# Run with:  julia --project demos/planck_demo.jl
 using CFCoding
 using Printf
 

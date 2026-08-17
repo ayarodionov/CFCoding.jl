@@ -1,5 +1,5 @@
 # Demo: continued-fraction coding of a Gauss-Kuzmin source (its natural
-# source) versus mismatched sources.  Run with:  julia --project demo.jl
+# source) versus mismatched sources.  Run with:  julia --project demos/demo.jl
 using CFCoding
 using Random, Printf
 

@@ -6,7 +6,7 @@
 # are quotient - 1, printables shown, the rest as '.' -- whenever the orbit
 # passes through 34..127 it spells characters.
 #
-# Run with:  julia --project collatz_demo.jl
+# Run with:  julia --project demos/collatz_demo.jl
 using CFCoding
 using Printf
 

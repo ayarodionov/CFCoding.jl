@@ -161,12 +161,12 @@ Run tests and demos with
 
 ```
 julia --project -e 'using Pkg; Pkg.test()'
-julia --project demo.jl
-julia --project pi_demo.jl
-julia --project e_demo.jl
-julia --project collatz_demo.jl
-julia --project planck_demo.jl
-julia --project constants_demo.jl
+julia --project demos/demo.jl
+julia --project demos/pi_demo.jl
+julia --project demos/e_demo.jl
+julia --project demos/collatz_demo.jl
+julia --project demos/planck_demo.jl
+julia --project demos/constants_demo.jl
 ```
 
 ## Notes

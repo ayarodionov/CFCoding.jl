@@ -6,7 +6,7 @@
 # typical real, its quotients follow the Gauss-Kuzmin law -- so re-encoding
 # them should cost almost exactly GK_ENTROPY bits per quotient.
 #
-# Run with:  julia --project pi_demo.jl
+# Run with:  julia --project demos/pi_demo.jl
 using CFCoding
 using Printf
 

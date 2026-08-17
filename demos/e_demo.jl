@@ -3,7 +3,7 @@
 # noise, e's follow Euler's exact pattern [2; 1, 2, 1, 1, 4, 1, 1, 6, ...]:
 # e is as atypical a real as they come, and the coder's rate shows it.
 #
-# Run with:  julia --project e_demo.jl
+# Run with:  julia --project demos/e_demo.jl
 using CFCoding
 using Printf
 

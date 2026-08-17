@@ -10,7 +10,7 @@
 #      decreed, so its CF is only meaningful up to the error bar -- a
 #      continued fraction with an experimental horizon.
 #
-# Run with:  julia --project constants_demo.jl
+# Run with:  julia --project demos/constants_demo.jl
 using CFCoding
 using Printf
 
